@@ -8,14 +8,14 @@ pipeline {
         KUBECTL = '/var/jenkins_home/tools/kubectl'
     }
 
-    stages {
-        stage('Getting Repo files') {
-            steps {
-                git branch: 'main-k8s',
-                    credentialsId: 'jenkins',
-                    url: "${REPO_URL}"
-            }
-        }
+   
+stage('Getting Repo files') {
+    steps {
+        git branch: 'main',
+            url: "${REPO_URL}"
+    }
+}
+
 
         stage('Build Docker Image') {
             steps {
