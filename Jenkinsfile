@@ -1,3 +1,4 @@
+```groovy
 pipeline {
     agent any
 
@@ -8,14 +9,13 @@ pipeline {
         KUBECTL = '/var/jenkins_home/tools/kubectl'
     }
 
-   
-stage('Getting Repo files') {
-    steps {
-        git branch: 'main',
-            url: "${REPO_URL}"
-    }
-}
-
+    stages {
+        stage('Getting Repo files') {
+            steps {
+                git branch: 'main',
+                    url: "${REPO_URL}"
+            }
+        }
 
         stage('Build Docker Image') {
             steps {
@@ -81,3 +81,4 @@ stage('Getting Repo files') {
         }
     }
 }
+```
