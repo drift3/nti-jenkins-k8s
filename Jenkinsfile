@@ -2,12 +2,10 @@ pipeline {
     agent any
 
     environment {
-        APP_NAME = 'new-app-nti'
-        REPO_URL = "https://github.com/drift3/nti-jenkins-k8s.git"
-
-        PATH+KUBECTL = '/var/jenkins_home/tools'
-        KUBECONFIG = '/var/jenkins_home/kubeconfig'
-    }
+    APP_NAME = 'new-app-nti'
+    REPO_URL = 'https://github.com/drift3/nti-jenkins-k8s.git'
+    KUBECONFIG = '/var/jenkins_home/kubeconfig'
+}
 
     stages {
         stage('Getting Repo files') {
