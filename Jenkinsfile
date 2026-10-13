@@ -3,7 +3,10 @@ pipeline {
 
     environment {
         APP_NAME = 'new-app-nti'
-        REPO_URL = "https://github.com/MohamedMagdy840/jenkins-repo.git"
+        REPO_URL = "https://github.com/drift3/nti-jenkins-k8s.git"
+
+        PATH+KUBECTL = '/var/jenkins_home/tools'
+        KUBECONFIG = '/var/jenkins_home/kubeconfig'
     }
 
     stages {
